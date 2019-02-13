@@ -1,22 +1,18 @@
 # ucll-vpn
 tunnelling using the leia.uclllabs.be
 -----------------------------------------
-version 0.1
-:: current state > no install yet, but works perfectly
+version 0.2
 
 HOW TO INSTALL
 ---------------
 ```
 apt-get install sshuttle
 ```
-
-create file executable:
 ```
-chmod +x ucll-vpn-cli
+chmod +x install.sh
 ```
-type your r number in the file:
 ```
-nohup sshuttle -r **r0123456**@leia.uclllabs.be:22345
+./install.sh
 ```
 NOTES
 -----------
