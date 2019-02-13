@@ -12,7 +12,7 @@ apt-get install sshuttle
 
 create file executable:
 ```
-chmod +X ucll-vpn-cli
+chmod +x ucll-vpn-cli
 ```
 type your r number in the file:
 ```
