@@ -22,7 +22,7 @@ If you intent to use this to get internet at your exams, use an extra vpn behind
 leia.uclllabs.be monitors all network traffic, with supervision in the exam-period
 
 
-How to check your ip in the leia.uclllabs.be for anonymity:
+How to check your ip in the leia.uclllabs.be server for anonymity:
 ```
 $ netstat -a | <YOUR_VPN_ADDRESS_HERE>
 ```
