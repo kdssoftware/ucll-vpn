@@ -2,7 +2,7 @@
 tunnelling using the leia.uclllabs.be
 -----------------------------------------
 **FOR LINUX**
-version 0.2
+version 0.3
 
 HOW TO INSTALL
 ---------------
