@@ -26,9 +26,12 @@ leia.uclllabs.be monitors all network traffic, with supervision in the exam-peri
 
 How to check your ip in the leia.uclllabs.be for anonymity:
 ```
-$ netstat -tn 2>/dev/null | <YOUR_VPN_ADDRESS_HERE>
+$ netstat -a | <YOUR_VPN_ADDRESS_HERE>
 ```
 ```
-$ netstat -tn 2>/dev/null | <YOUR_ACTUAL_IP_ADDRESS_HERE>
+$ netstat -a 2>/dev/null | <YOUR_ACTUAL_IP_ADDRESS_HERE>
 ```
 It should only find your vpn's ip address.
+info: 
+```netstat -a``` shows all incoming and outgoing connections in the current server
+```| grep <YOUR_IP>``` finds your ip    
