@@ -11,8 +11,5 @@ echo "installing in /usr/local/bin/ucll-vpn"
 echo ${user} > /usr/local/bin/ucll-vpn/user.txt 
 cp ./ucll-vpn /usr/bin
 chmod +x /usr/bin/ucll-vpn
-
-
-
-
-
+echo "DONE!"
+echo "type 'ucll-vpn' to run"
