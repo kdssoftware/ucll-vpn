@@ -1,0 +1,13 @@
+
+#!/bin/bash
+date=$(date +'%d-%m-%Y--%H-%M')
+clear
+echo "+------------------------------------------------------------------------$
+echo "|creating log /usr/local/logs/ucll-vpn/${date}.out                      |"
+echo "|                                                                        $
+echo "|after authentication => new IP:193.191.177.1 (in Leopoldsburg, Limburg, $
+echo "|quit: Ctrl+C                                                            $
+echo "+------------------------------------------------------------------------$
+nohup sshuttle -r rXXXXXXXXXX@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be > $
+clear
+echo "ucll-vpn quit succes"
