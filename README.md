@@ -1,4 +1,4 @@
-# ucll-vpn-
+# ucll-vpn
 tunnelling using the leia.uclllabs.be
 -----------------------------------------
 version 0.1
