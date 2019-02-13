@@ -6,14 +6,14 @@ fi
 date=$(date +'%d-%m-%Y--%H-%M')
 clear
 echo "+---------------------------------------------------------------------------------+"
-echo "|creating log /usr/local/logs/ucll-vpn/${date}.out                      |"
+echo "|creating log /usr/local/ucll-vpn/${date}.out                           |"
 echo "|                                                                                 |"
 echo "|after authentication => new IP:193.191.177.1 (in Leopoldsburg, Limburg, Belgium) |"
 echo "|quit: Ctrl+C                                                                     |"
 echo "+---------------------------------------------------------------------------------+" 
 input="/usr/local/bin/ucll-vpn/user.txt"
 while IFS= read -r file
-        do nohup sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be > /usr/local/logs/ucll-vpn/${date}.out 2>&1
+        do nohup sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be > /usr/local/bin/ucll-vpn/${date}.out 2>&1
 done < "$input"
 clear
 echo "ucll-vpn quit succes"
