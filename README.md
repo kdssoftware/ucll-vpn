@@ -11,7 +11,7 @@ clone all files in a folder
 apt-get install sshuttle
 ```
 ```
-chmod +x install.sh
+sh ./install.sh
 ```
 ```
 ./install.sh
