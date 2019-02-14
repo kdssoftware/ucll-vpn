@@ -13,8 +13,9 @@ apt-get install sshuttle
 ```
 sh ./install.sh
 ```
+To run the app:
 ```
-./install.sh
+ucll-vpn
 ```
 NOTES
 -----------
