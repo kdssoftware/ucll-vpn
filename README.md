@@ -17,6 +17,13 @@ To run the app:
 ```
 ucll-vpn
 ```
+
+Options for installation:
+```
+-v : verbose (more output)
+-h : help message
+```
+
 NOTES
 -----------
 If you intent to use this to get internet at your exams, use an extra vpn behind it.
