@@ -11,11 +11,11 @@ clone all files in a folder
 apt-get install sshuttle
 ```
 ```
-sh ./install.sh
+sudo bash ./install.sh
 ```
 To run the app:
 ```
-ucll-vpn
+sudo ucll-vpn
 ```
 
 Options for installation:
