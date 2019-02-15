@@ -28,16 +28,22 @@ NOTES
 -----------
 If you intent to use this to get internet at your exams, use an extra vpn behind it.
 leia.uclllabs.be monitors all network traffic, with supervision in the exam-period
-
+(you need to change the useragent of your browser too)
 
 How to check your ip in the leia.uclllabs.be server for anonymity:
 ```
 $ netstat -a | <YOUR_VPN_ADDRESS_HERE>
 ```
 ```
-$ netstat -a 2>/dev/null | <YOUR_ACTUAL_IP_ADDRESS_HERE>
+$ netstat -a | <YOUR_ACTUAL_IP_ADDRESS_HERE>
 ```
 It should only find your vpn's ip address.
 info: 
-```netstat -a``` shows all incoming and outgoing connections in the current server
-```| grep <YOUR_IP>``` finds your ip    
+```
+netstat -a
+```
+: shows all incoming and outgoing connections in the current server
+```
+| grep <IP_ADDRESS>
+```
+: finds your ip 
