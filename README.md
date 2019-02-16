@@ -76,9 +76,9 @@ $ netstat -a | <YOUR_ACTUAL_IP_ADDRESS_HERE>
 ```
 It should only find your vpn's ip address.
 
-Info about
--
-: shows all incoming and outgoing connections in the current server```netstat -a```
+**info about notes**
+
+shows all incoming and outgoing connections in the current server: ```netstat -a```
 
 Finds your ip : ```| grep <IP_ADDRESS> ```
 
