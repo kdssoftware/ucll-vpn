@@ -43,7 +43,7 @@ leia.uclllabs.be **monitors all network traffic**, with supervision in the exam-
 If you intent to use this to get internet at your exams and want to be anonymous:
 
 
-Change your **IP**: 
+**Change your IP**: 
 
 Use a vpn gateway before the ucll-vpn tunnel.
 
@@ -56,7 +56,7 @@ OR use **TOR-browser**.
 > Check your DNS server by: ```cat /etc/resolv.conf```
 
 
-Change your **Useragent** : 
+**Change your Useragent** : 
 
 > Firefox: change in *about:config* *general.useragent.override*
 
