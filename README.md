@@ -24,7 +24,8 @@ Options for **installation**:
 ```
 
 
-**TO RUN**
+**HOW TO RUN:**
+
 To run the app:
 ```
 ucll-vpn
