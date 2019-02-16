@@ -28,11 +28,16 @@ Options for installation:
 
 Anonymity
 -
-leia.uclllabs.be **monitors all network traffic**, with supervision in the exam-period
+leia.uclllabs.be **monitors all network traffic**, with supervision in the exam-period.
+
 If you intent to use this to get internet at your exams and want to be anonymous:
 
-Change your **IP**: Use a vpn gateway before the ucll-vpn tunnel.
-                    OR use **TOR-browser**.
+
+Change your **IP**: 
+
+Use a vpn gateway before the ucll-vpn tunnel.
+
+OR use **TOR-browser**.
 
 > Be sure that your vpn has it's own dns server and doesnt keep logs
 
@@ -60,11 +65,10 @@ $ netstat -a | <YOUR_VPN_ADDRESS_HERE>
 $ netstat -a | <YOUR_ACTUAL_IP_ADDRESS_HERE>
 ```
 It should only find your vpn's ip address.
-Info about
 
-: shows all incoming and outgoing connections in the current server
-```
-netstat -a
-```
+Info about
+-
+: shows all incoming and outgoing connections in the current server```netstat -a```
+
 Finds your ip : ```| grep <IP_ADDRESS> ```
 
