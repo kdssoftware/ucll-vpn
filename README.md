@@ -3,10 +3,13 @@ tunnelling using the leia.uclllabs.be
 Info
 -
 Only **for Linux**
+
 ucll-vpn V0.4
 
-HOW TO INSTALL
+HOW TO USE
 -
+**INSTALLATION:**
+
 Clone all files in a folder
 ```
 apt-get install sshuttle
@@ -14,6 +17,14 @@ apt-get install sshuttle
 ```
 sh ./install.sh
 ```
+Options for **installation**:
+```
+-v : verbose (more output)
+-h : help message
+```
+
+
+**TO RUN**
 To run the app:
 ```
 ucll-vpn
@@ -24,13 +35,6 @@ Options for **ucll-vpn**:
 -d : uses the Cloudfare secure DNS (1.1.1.1)
 -h : help message
 ```
-
-Options for **installation**:
-```
--v : verbose (more output)
--h : help message
-```
-
 Anonymity
 -
 leia.uclllabs.be **monitors all network traffic**, with supervision in the exam-period.
