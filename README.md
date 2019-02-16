@@ -1,5 +1,5 @@
-# ucll-vpn
-tunnelling using the leia.uclllabs.be
+# UCLL-VPN
+
 Info
 -
 Only **for Linux**
