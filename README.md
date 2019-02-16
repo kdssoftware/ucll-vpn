@@ -7,7 +7,7 @@ ucll-vpn V0.4
 
 HOW TO INSTALL
 -
-clone all files in a folder
+Clone all files in a folder
 ```
 apt-get install sshuttle
 ```
@@ -18,12 +18,17 @@ To run the app:
 ```
 ucll-vpn
 ```
+Options for **ucll-vpn**:
+```
+-v : verbose (more output)
+-d : uses the Cloudfare secure DNS (1.1.1.1)
+-h : help message
+```
 
-Options for installation:
+Options for **installation**:
 ```
 -v : verbose (more output)
 -h : help message
--d : uses the Cloudfare secure DNS (1.1.1.1)
 ```
 
 Anonymity
