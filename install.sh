@@ -1,13 +1,13 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
-fi
+#if [ "$EUID" -ne 0 ]
+#  then echo "Please run as root"
+#  exit
+#fi
 VERBOSE="false"
 #OPTIONS:
 #-? / -h : help
 #-v : verbose
-
+HOME=$(eval echo "~$different_user")
 while getopts "hv" OPTION; do
 	case $OPTION in
 		h)
@@ -29,26 +29,31 @@ if [ $VERBOSE = "true" ]; then
 fi
 #Potential improvments:
 #check if $user is a real student number 
-if [ ! -d "/usr/local/bin/ucll-vpn" ]; then
+if [ ! -d "${HOME}/.ucll-vpn" ]; then
 	if [ $VERBOSE = "true" ]; then
-		echo "creating directory in /usr/local/bin" 
-		echo "directory name: ucll-vpn"
+		echo "creating directory in ${HOME}" 
+		echo "directory name: .ucll-vpn"
 	fi
-	mkdir /usr/local/bin/ucll-vpn
+	mkdir ${HOME}/.ucll-vpn
+
 fi
 echo "installing ucll-vpn..."
 if [ $VERBOSE = "true" ]; then
 	echo "creating user.txt"
 	echo "putting ${user} in user.txt"
+	echo "creating dns.txt"
+	touch ${HOME}/.ucll-vpn/dns.txt
 fi
-echo ${user} > /usr/local/bin/ucll-vpn/user.txt 
+echo ${user} > ${HOME}/.ucll-vpn/user.txt 
 if [ $VERBOSE = "true" ]; then
-	echo "copying ./ucll-vpn to the /usr/bin"
+	echo "copying ucll-vpn to /usr/bin"
 fi
+
 cp ./ucll-vpn /usr/bin
 if [ $VERBOSE = "true" ]; then
 	echo "making /usr/bin/ucll-vpn executable"
 fi
+
 chmod +x /usr/bin/ucll-vpn
 printf "DONE: 'ucll-vpn' to run\n"
 

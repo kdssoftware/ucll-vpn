@@ -1,19 +1,89 @@
 #!/bin/bash
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
-  exit
+VERBOSE="false"
+DNS="false"
+#OPTIONS:
+#-? / -h : help
+#-v : verbose
+#-d : dns option
+if [ "$EUID" -ne 0 ];then
+        echo "run as root"
+        exit
 fi
-date=$(date +'%d-%m-%Y--%H-%M')
+while getopts "hvd" OPTION; do
+        case $OPTION in
+                h)
+                        #HELP
+                        printf " UCLL-VPN\n"
+                        printf " --------\n"
+                        printf " OPTIONS:\n"
+                        printf " -h : shows this message\n"
+                        printf " -v : shows more output\n"
+			printf " -d : uses cloudfare's 1.1.1.1 secure DNS\n"
+			exit
+                        ;;
+                v)
+			echo"using verbose"
+                        VERBOSE="true"
+                        ;;
+        	d)
+#			if [ "$EUID" -ne 0 ];then
+#  				echo "For DNS option: run as root"
+# 				exit
+#			fi
+			DNS="true"
+			;;
+	esac
+done
 clear
-echo "+---------------------------------------------------------------------------------+"
-echo "|creating log /usr/local/ucll-vpn/${date}.out                           |"
-echo "|                                                                                 |"
-echo "|after authentication => new IP:193.191.177.1 (in Leopoldsburg, Limburg, Belgium) |"
-echo "|quit: Ctrl+C                                                                     |"
-echo "+---------------------------------------------------------------------------------+" 
-input="/usr/local/bin/ucll-vpn/user.txt"
-while IFS= read -r file
-        do nohup sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be > /usr/local/bin/ucll-vpn/${date}.out 2>&1
-done < "$input"
-clear
+HOME=$(eval echo "~$different_user")
+dnsTXT="${HOME}/.ucll-vpn/dns.txt"
+input="${HOME}/.ucll-vpn/user.txt"
+dnsLocation="/etc/resolv.conf"
+
+
+if [ $VERBOSE = "false" ]; then
+	date=$(date +'%d-%m-%Y--%H-%M')
+	echo "+---------------------------------------------------------------------------------+"
+	echo "|creating log ${HOME}/.ucll-vpn/${date}.out                           		|"
+	echo "|                                                                                 |"
+	echo "|new IP:193.191.177.1 (in Leopoldsburg, Limburg, Belgium) 			|"
+	echo "|quit: Ctrl+C                                                                     |"
+	echo "+---------------------------------------------------------------------------------+" 
+	
+	while IFS= read -r file
+		do 
+		if [ $DNS = "true" ]; then
+#			cat ${dnsLocation} > ${dnsTXT}
+#			echo "old name server:"
+#			cat ${dnsLocation}
+#			rm ${dnsLocation}
+#			touch ${dnsLocation}
+#			printf "#edited by ucll-vpn\n1.1.1.1\n" > ${dnsLocation}
+#			echo "new name server:"
+			printf "This version will not edit your DNS config, do it manually => /etc/resolv.conf"
+			nohup sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be --dns > ${HOME}/.ucll-vpn/${date}.out 2>&1
+		fi
+		if [ $DNS = "false" ]; then
+	        	nohup sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be > ${HOME}/.ucll-vpn/${date}.out 2>&1			
+		fi done < "$input"
+fi
+
+if [ $VERBOSE = "true" ]; then
+	printf "No log-file will be created, log output will be posted in terminal\n\n"
+	echo "new IP:193.191.177.1 (in Leopoldsburg, Limburg, Belgium)"
+	echo "quit: Ctrl +C"
+
+        input="${HOME}/.ucll-vpn/user.txt"
+        while IFS= read -r file
+                do sshuttle -r ${file}@leia.uclllabs.be:22345 0/0 -v -x leia.uclllabs.be
+        done < "$input"
+fi
+#if [ $DNS = "true ]; then
+#	echo "cleaning up dns setup"
+#	rm ${dnsLocation}
+#	touch ${dnsLocation}
+#	dnsTXT_output="$(cat /etc/local/bin/ucll-vpn/dns.txt)"
+#	echo ${dnsTXT_output} > ${dnsLocation}
+#	cat ${dnsLocation}
+#fi
 echo "ucll-vpn quit succes"
