@@ -53,7 +53,7 @@ OR use **TOR-browser**.
 
 > If your vpn doesnt support it own dns server use the **-d** option
 
-> Check your DNS server by: ```cat /etc/resolv.conf```
+> change your DNS server on: ```cat /etc/resolv.conf``` (next update will do this automatically)
 
 
 **Change your Useragent** : 
