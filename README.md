@@ -33,7 +33,7 @@ ucll-vpn
 Options for **ucll-vpn**:
 ```
 -v : verbose (more output)
--d : uses the Cloudfare secure DNS (1.1.1.1)
+-d : uses the DNS settings (in /etc/resolv.conf)
 -h : help message
 ```
 Anonymity
