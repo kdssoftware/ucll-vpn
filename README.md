@@ -42,8 +42,7 @@ leia.uclllabs.be **monitors all network traffic**, with supervision in the exam-
 
 If you intent to use this to get internet at your exams and want to be anonymous:
 
-**BE SURE NOT TO LOGIN WITH YOUR OWN STUDENTNUMBER**
-\n------------------------------------------------
+**BE SURE NOT TO LOGIN WITH YOUR OWN STUDENTNUMBER!!**
 
 **Change your IP**: 
 
