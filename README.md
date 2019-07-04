@@ -44,6 +44,8 @@ If you intent to use this to get internet at your exams and want to be anonymous
 
 **BE SURE NOT TO LOGIN WITH YOUR OWN STUDENTNUMBER!!**
 
+(try using the tools Hydra and Cupp to get one)
+
 **Change your IP**: 
 
 Use a vpn gateway before the ucll-vpn tunnel.
