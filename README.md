@@ -12,18 +12,19 @@ HOW TO USE
 
 Clone all files in a folder
 
-ubuntu based systems:
+* ubuntu based systems:
 
-```
-apt-get install sshuttle
-```
+  ```
+  apt-get install sshuttle
+  ```
 
-archlinux based systems:
+* archlinux based systems:
 
-```
-pacman -S sshuttle
-```
+  ```
+  pacman -S sshuttle
+  ```
 
+After downloading 
 ```
 sh ./install.sh
 ```
