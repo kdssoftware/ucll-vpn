@@ -26,7 +26,7 @@ Clone all files in a folder
 
 After downloading 
 ```
-sh ./install.sh
+sh ./ucll-vpn/install.sh
 ```
 Options for **installation**:
 ```
